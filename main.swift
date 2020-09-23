@@ -56,8 +56,28 @@ dollars = 105
 // You want your fitness tracking app to give as much encouragement as possible to your users. Create a variable steps equal to the number of steps you guess you've taken today. Create a constant stepGoal equal to 10,000. Write an if-else statement that will print "You're almost halfway there!" if steps is less than half of stepGoal, and will print "You're over halfway there!" if steps is greater than half of stepGoal.
 let stepGoal = 10000
 var steps = 3500
-// Now create a new, but similar, if-else-if statement that prints "Way to get a good start today!" if steps is less than a tenth of stepGoal, prints "You're almost halfway there!" if steps is less than half of stepGoal, and prints "You're over halfway there!" if steps is greater than half of stepGoal.
 
+if (steps < 5_000)
+  {
+    print ("You're almost halfway there")
+  }
+  else
+    { 
+       print ("You're over halfway there") 
+    }
+// Now create a new, but similar, if-else-if statement that prints "Way to get a good start today!" if steps is less than a tenth of stepGoal, prints "You're almost halfway there!" if steps is less than half of stepGoal, and prints "You're over halfway there!" if steps is greater than half of stepGoal.
+if (steps < 5_000)
+  {
+    print ("You're almost halfway there")
+  }
+  else if (steps < 1_000)
+    { 
+       print ("Way to get a good start today") 
+    }
+      else
+        { 
+          print ("You're over halfway there") 
+        }
 /* Imagine you're going to dinner with friends and are struggling to decide where to go. Two of you have very strong opinions and have clearly laid out your requirements for dinner as follows:
 
 You want to eat somewhere that has either fish or pizza
@@ -68,21 +88,66 @@ let hasFish = true
 let hasPizza = false
 let hasVegan = true
 
+if (hasFish == true && hasPizza == true && hasVegan == true)
+{
+  print ("Let's go!")
+}
+else
+{
+  print ("Sorry, we'll have to think of somewhere else.")
+}
 // Imagine you're trying to decide whether or not to go on a walk. You decide that you'll go on a walk if it's not raining or if it's 82 degress or warmer and sunny out. Create a constant isNiceWeather that is equal to an expression that evaluates to a boolean indicating whether or not the weather is nice enough for you to go for a walk. Write an if statement that will print "I'm going for a walk!" if the weather is nice.
 let temp = 82
 let isRaining = true
 let isSunny = true
-
+if (isRaining == true || temp <= 82 && isSunny == true)
+{
+  print ("I'm not walking today")
+}
+  else
+  {
+    print ("I'm going for a walk!")
+  }
 /* You decide that you want your fitness tracker to have a feature that helps users stay inside specified heart rate zones while they are working out. You'll display a message to the user telling them to go a little faster to increase their heart rate if they are below the target, tell them that they are spot on if they are in the target, and tell them to slow it down a little if they are over the target.
 
 Create constants isInTarget, isBelowTarget, and isAboveTarget that equal expressions that evaluate to whether or not currentHR is between the lower and upper bounds, below the lower bound, and above the upper bound, respectively. Then write an if-else-if statement that will print "You're right on track!" if the user is inside the target zone, "You're doing great, but try to push it a bit!" if the user is below the target zone, and "You're on fire! Slow it down just a bit." if the user is above the target zone. */
 let targetLowerBound = 120
 let targetUpperBound = 150
 let currentHR = 147
-
+if (currentHR > targetLowerBound && currentHR < targetUpperBound)
+{
+  print ("You're on the right track")
+}
+else if (currentHR < targetLowerBound)
+{
+  print ("You're doing great, but try to push it a bit!")
+}
+else 
+{ 
+  print ("You're on fire! Slow it down just a bit.")
+}
 // Imagine you're on a baseball team nearing the end of the season. Create a leaguePosition constant with a value of 1. Using a switch statement, print "Champions!" if the leaguePosition is 1, "Runners up" if the value is 2, "Third place" if the value is 3, and "Bad season!" in all other cases.
-
+let leaguePosition = 1
+switch leaguePosition
+{
+  case 1:
+    print ("Champions")
+  case 2:
+    print ("Runners up")  
+  case 3:
+    print ("Third place") 
+  default:
+    print ("Bad season")
+}
 // Write a new switch statement that prints "Medal winner" if leaguePosition is within the range of 1-3. Otherwise, print "No medal awarded".
+let medal = 1
+switch medal
+{
+  case 1...3:
+   print ("Medal winner")
+  default: 
+   print ("No medal awarded")
+}
 
 /* If you completed the Target Heart Rate exercise, you showed different statements to the user based on whether or not the user's heart rate was inside of a target zone. Now you decide to just tell them what zone they are in rather than tell them what zone to be in.
 
@@ -95,7 +160,23 @@ Write a switch statement that will print different statements based on what rang
 181-200: "You are in the Maximum zone. Activity in this zone helps fit athletes develop speed."
 
 If currentHR is above the listed zones, print some kind of warning asking the user to slow down. */
+switch currentHR
+{
+  case 100...120:
+    print ("You are in the Very Light zone. Activity in this zone helps with recovery.")
+  case 121...140:
+    print ("You are in the Light zone. Activity in this zone helps improve basice endurance and fat burning.")
+  case 141...160:
+    print ("You are in the Moderate zone. Activity in this zone helps improve aerobic fitness.")
+  case 161...180:
+    print ("You are in the Hard zone. Activity in this zone increases maximum performance capacity for shorter sessions.")
+  case 181...200:
+    print ("You are in the Maximum zone. Activity in this zone helps fit athletes develop speed.")
+  default:
+    print ("Slow down Please")
 
+
+}
 // Remember the currentHR constant already exists and is 147
 
 // Refactor the code below so that largest is declared and assigned to in one line using the ternary operator.
@@ -109,10 +190,20 @@ if number1 > number2 {
     largest = number2
 }
 
+largest = number1 > number2 ? number1 : number2
+
 // The code below should look similar to code you wrote in the Fitness Decisions exercise. The if-else statement is actually unnecessary, and instead you can print either one statement or the other all on one line using the ternary operator. Go ahead and refactor the code below to do just that.
 
 if steps < stepGoal / 2 {
     print("Almost halfway!")
 } else {
     print("Over halfway!")
+}
+steps < stepGoal / 2 ?
+{
+  print ("Almost halfway")
+}
+else
+{
+  print ("over halfway")
 }
