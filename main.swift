@@ -6,26 +6,47 @@ print(43 == 53)
 */
 
 // 9 == 9
+print (true)
+print (9 == 9)
 
 // 9 != 9
-
+print (false)
+print (9 != 9)
 // 47 > 90
-
+print (false)
+print (47 > 90)
 // 47 < 90
-
+print (true)
+print (47 < 90)
 // 4 <= 5
-
+print (true)
+print (4 <= 5)
 // 4 >= 5
-
+print (false)
+print (4 >= 5)
 // (47 > 90) && (47 < 90)
-
+print (false)
+print (47 > 90 && 47 < 90)
 // (47 > 90) || (47 < 90)
-
+print (true)
+print (47 > 90 || 47 < 90)
 // !true
-
+print (false)
+print (!true)
 // Imagine you're creating a machine that will count your money for you and tell you how wealthy you are based on how much money you have. A variable dollars has been given to you with a value of 0. Write an if statement that prints "Sorry, kid. You're broke!" if dollars has a value of 0. Observe what is printed to the console.
 var dollars = 0
-
+  if (dollars == 0)
+    {
+        print ("Sorry kid. You're broke")
+    }
+    else if (dollars == 10)
+      {
+        print ("You've got some spending money")
+      }
+      else if (dollars > 100)
+        {
+          print ("Looks to me like you're money")
+        }
 // dollars has been updated below to have a value of 10. Write an an if-else statement that prints "Sorry, kid. You're broke!" if dollars has a value of 0, but prints "You've got some spending money!" otherwise. Observe what is printed to the console.
 dollars = 10
 
